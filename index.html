@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>한달 교통비</title>
+
+	<style>
+		input{
+			background: #ddd;
+			border: none;
+			padding:5px;
+			width: 80px;
+			color: black;
+			font-size: 14px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			box-shadow: 1px 0px 3px gray inset;
+
+		}
+
+	</style>
+</head>
+
+<body>
+	<h1>한달 교통비</h1><br>
+
+	<div id="cal">
+		<p>
+			지하철(1,250원)X
+			<input type="number" id="subway" placeholder="횟수">
+		</p>
+
+		<p>
+			버스(1,200원)X
+			<input type="number" id="bus" placeholder="횟수">
+		</p>
+
+		<p>
+			고속버스(학생 5,300원)X
+			<input type="number" id="ebus" placeholder="횟수">
+		</p>
+	</div>
+
+	<input type="button" value="확인" id="but"> 
+	<br></br>
+
+	<div id="monitor_go">
+		한달 교통비는 ? 원 입니다.<br></br>
+	</div>
+
+	<div id="monitor_goback">
+		왕복 ?원 입니다.
+		
+	</div>
+
+	<script type="text/javascript">
+		but.onclick = function(){
+			var sub = subway.value;
+			var bus_1 = bus.value;
+			var bus_2 = ebus.value;
+
+			var Sub = 1250 * sub 
+			var Bus_1 = 1200 * bus_1
+			var Bus_2 = 5300 * bus_2
+
+			var sum = (Sub+Bus_1+Bus_2);
+			var sumand = (Sub+Bus_1+Bus_2)*2;
+
+			monitor_go.innerHTML= "편도 한달 교통비는" + sum + "입니다.";
+
+			monitor_goback.innerHTML= "한달 왕복 교통비는" + sumand + "입니다.";
+		}
+		
+
+	</script>
+
+</body>
+</html>
